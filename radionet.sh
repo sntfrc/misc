@@ -24,7 +24,7 @@ fi
 
 CALLSIGN=$1
 IP_ADDRESS=$2
-AUDIO_DEVICE=default
+AUDIO_DEVICE=CM108
 SPEED=1200
 
 if [ $# -eq 3 ]; then
@@ -51,7 +51,7 @@ sleep 1
 # Prepare configuration files
 
 if ! grep -q $CALLSIGN "/etc/ax25/axports"; then
-	echo -e "$CALLSIGN\t$CALLSIGN\t0\t255\t7\tPacket radio" | sudo tee -a /etc/ax25/axports > /dev/null
+	echo -e "$CALLSIGN\t$CALLSIGN\t0\t255\t7\tRadioNet" | sudo tee -a /etc/ax25/axports > /dev/null
 fi
 
 echo -e "ADEVICE $AUDIO_DEVICE\nMODEM $SPEED\nPTT CM108\n" > /tmp/direwolf.conf
