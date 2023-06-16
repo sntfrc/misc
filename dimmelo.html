@@ -1,6 +1,18 @@
 #!/bin/sh
 
-chrome --headless --remote-debugging-port=7777 --use-fake-ui-for-media-stream --autoplay-policy=no-user-gesture-required --audio file://$(realpath $0)
+### Dimmelo -- Software simplex repeater for radio enthusiasts
+### (C) 2023 Federico Santandrea
+###
+### You can just open this file in any web browser and it will start heard audio after enough silence.
+### This is very useful to run on Android smartphones attached to handheld transceivers with VOX.
+###
+### You can also chmod this and run it in background on any Linux box with chromium installed. It will
+### work without any GUI in headless mode, no desktop required. Useful for things like Raspberry Pi Zero.
+#
+
+chromium-browser --headless --remote-debugging-port=7777\
+    --use-fake-ui-for-media-stream --autoplay-policy=no-user-gesture-required --audio\
+    file://$(realpath $0)
 
 exit 0
 
