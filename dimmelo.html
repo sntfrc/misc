@@ -12,7 +12,7 @@
 ### This mode is useful for things like Raspberry Pi Zero.
 #
 
-chromium-browser --headless --remote-debugging-port=7777\
+chromium --headless --disable-gpu --remote-debugging-port=7777\
     --use-fake-ui-for-media-stream --autoplay-policy=no-user-gesture-required --audio\
     file://$(realpath $0)
 
