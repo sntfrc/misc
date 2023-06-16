@@ -1,6 +1,6 @@
 #!/bin/sh
 
-chrome --headless --remote-debugging-port=7777 --use-fake-ui-for-media-stream --autoplay-policy=no-user-gesture-required --audio file://$PWD/$0 &
+chrome --headless --remote-debugging-port=7777 --use-fake-ui-for-media-stream --autoplay-policy=no-user-gesture-required --audio file://$(realpath $0) &
 
 exit 0
 
