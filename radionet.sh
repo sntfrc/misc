@@ -21,10 +21,10 @@ fi
 
 # Prepare settings
 # Change AUDIO_DEVICE to "default" to use main sound card (with VOX PTT).
+AUDIO_DEVICE=CM108
 
 CALLSIGN=$1
 IP_ADDRESS=$2
-AUDIO_DEVICE=CM108
 SPEED=1200
 
 if [ $# -eq 3 ]; then
@@ -32,6 +32,7 @@ if [ $# -eq 3 ]; then
 fi
 
 # Install required tools
+# (but you would be better off installing direwolf from GitHub before)
 
 sudo -v
 
@@ -51,7 +52,7 @@ sleep 1
 # Prepare configuration files
 
 if ! grep -q $CALLSIGN "/etc/ax25/axports"; then
-	echo -e "$CALLSIGN\t$CALLSIGN\t0\t255\t7\tRadioNet" | sudo tee -a /etc/ax25/axports > /dev/null
+	echo -e "\n$CALLSIGN\t$CALLSIGN\t0\t255\t7\tRadioNet" | sudo tee -a /etc/ax25/axports > /dev/null
 fi
 
 echo -e "ADEVICE $AUDIO_DEVICE\nMODEM $SPEED\nPTT CM108\n" > /tmp/direwolf.conf
