@@ -9,10 +9,11 @@ echo
 echo "=== TCP/IP over AX.25 on software TNC setup script ==="
 echo "(C) 2023 Federico Santandrea, IU4AAJ"
 echo
-echo "This will prepare a newly installed Debian system to act as a TCP/IP packet radio endpoint."
-echo "It will also act as an open router for the declared subnet for any other connected machine."
+echo "This will prepare a newly installed Debian system to act as a TCP/IP packet"
+echo "radio endpoint. It will also act as an open router for the declared subnet"
+echo "for any other connected machine."
 echo
-echo "Warning: any already present Direwolf or axports configuration will be overwritten."
+echo "Warning: any current Direwolf or axports configuration will be overwritten."
 echo
 echo "Press any key to continue."
 read
@@ -77,7 +78,7 @@ systemctl daemon-reload
 
 echo "Done! Next steps:"
 echo " 1. Please edit /etc/direwolf.conf file correctly for your radio."
-echo " 2. Run 'sudo alsamixer' and set correct playback and capture volume levels."
+echo " 2. Run 'sudo alsamixer' and set playback and capture volume levels."
 echo " 3. Enable TNC service with 'systemctl enable tnc'"
 echo
 echo "Enjoy packet radio!"
